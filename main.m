@@ -5,7 +5,7 @@ clear;clc;
 
 [yD,FsD] = processor('Drum.wav', 'Drum1.wav');
 [yDcopy,FsDcopy] = audioread("Drum1.wav");
-
+info = audioinfo("Drum1.wav");
 subplot(2,1,1)
 plot(yDcopy)
 subplot(2,1,2)
