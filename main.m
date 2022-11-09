@@ -1,17 +1,28 @@
 clear;clc;
-% [yB,FsB] = processor('Birds.wav', 'Birds1.wav');
-% [yBcopy,FsBcopy] = audioread("Birds1.wav");
-% plot(yBcopy)
+% [yBirds,FsBirds] = processor('Birds.wav', 'BirdsModified.wav');
+% [yBirdsModified,FsBirdsModified] = audioread("BirdsModified.wav");
+% subplot(2,1,1)
+% plot(yBirdsModified)
+% subplot(2,1,2)
+% plot(meanFilter(20, yBirdsModified))
+% sound(meanFilter(20,yBirdsModified), FsBirdsModified)
 
-[yD,FsD] = processor('Drum.wav', 'Drum1.wav');
-[yDcopy,FsDcopy] = audioread("Drum1.wav");
-info = audioinfo("Drum1.wav");
+[yDrum,FsDrum] = processor('Drum.wav', 'DrumModified.wav');
+[yDrumModified,FsDrumModified] = audioread("DrumModified.wav");
+
 subplot(2,1,1)
-plot(yDcopy)
+plot(yDrumModified)
 subplot(2,1,2)
-plot(medianFunction(yDcopy, 10))
-%sound(meanFilter(20,yDcopy), FsDcopy)
+plot(meanFilter(20, yDrumModified))
+sound(meanFilter(20,yDrumModified), FsDrumModified)
 
 
-%[y3,Fs3] = processor('Speech.wav');
-% audiowrite("Speech1.wav", y3, Fs3);
+%[y3,Fs3] = processor('Speech.wav', 'SpeechModified.wav');
+% [ySpeechModified,FsSpeechModified] = audioread("SpeechModified.wav");
+% 
+% subplot(2,1,1)
+% plot(ySpeechModified)
+% subplot(2,1,2)
+% plot(meanFilter(20, ySpeechModified))
+% sound(meanFilter(20,ySpeechModified), FsSpeechModified)
+
