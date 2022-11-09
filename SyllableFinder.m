@@ -1,10 +1,3 @@
-
-
-
-finalPks = nonzeros(pks);    %%remove the zeros (non peaks)
-numSyllables = size(finalPks);    
-fprintf('%s %d', "Number of syllables:", numSyllables);
-
 function numSyllables = SyllableFinder(signal, range)
     absSignal = abs(signal);
     %plotting the absolute value of the signal
@@ -46,4 +39,7 @@ function numSyllables = SyllableFinder(signal, range)
             pks(i) = 0;                     
         end
     end
+    finalPks = nonzeros(pks);    %%remove the zeros (non peaks)
+    numSyllables = size(finalPks);    
+    fprintf('%s %d', "Number of syllables:", numSyllables);
 end
