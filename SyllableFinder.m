@@ -1,3 +1,4 @@
+%This fucntion calculated the number of syllables for an input signal
 function numSyllables = SyllableFinder(signal, range)
     absSignal = abs(signal);
     %plotting the absolute value of the signal

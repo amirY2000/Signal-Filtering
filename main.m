@@ -10,11 +10,12 @@ clear;clc;
 [yDrum,FsDrum] = processor('Drum.wav', 'DrumModified.wav');
 [yDrumModified,FsDrumModified] = audioread("DrumModified.wav");
 
-subplot(2,1,1)
-plot(yDrumModified)
-subplot(2,1,2)
-plot(meanFilter(20, yDrumModified))
+%subplot(2,1,1)
+%plot(yDrumModified)
+%subplot(2,1,2)
+SilentRegion(yDrumModified);
 sound(meanFilter(20,yDrumModified), FsDrumModified)
+
 
 
 %[y3,Fs3] = processor('Speech.wav', 'SpeechModified.wav');

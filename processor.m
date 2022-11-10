@@ -1,3 +1,5 @@
+%This funciton converts stereo signal to mono and changes the sample rate
+%then eventually writes the modified signal into a new wav file
 function [y, Fs] = processor(filename, newFile)
     [y, Fs] = audioread(filename);
     
