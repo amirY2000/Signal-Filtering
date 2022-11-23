@@ -1,5 +1,5 @@
 %This function removes the silent regions in the signal
-function SilentRegion(signal)
+function silentRemoved = SilentRegion(signal)
     %plotting the absolute value of the signal
     subplot(4,1,1)
     absSignal = abs(signal);
@@ -31,5 +31,6 @@ function SilentRegion(signal)
     %oscillating between 0 and 1
     subplot(4,1,4)
     plot(absFilteredSignal)
+    silentRemoved = absFilteredSignal;
 end
 
