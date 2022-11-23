@@ -50,16 +50,28 @@ function numSyllables = SyllableFinder(inputSignal)
     signal = SilentRegion(inputSignal);
     numSyllables = 0; %number of syllables
     silent = 0; %The size of silent region
+%     for i = 1:1:size(signal)
+%       if (signal(i) == 0) %counts the silent values
+%           silent = silent + 1;
+%       end
+%       if (signal(i) ~= 0 && silent ~= 1150)
+%           silent = 0;
+%       end
+%       if (signal(i) ~= 0)
+%            numSyllables = numSyllables + 1;
+%            silent = 0;
+%       end
+%     end
     for i = 1:1:size(signal)
-      if (signal(i) == 0)
-          silent = silent + 1;
-      end
-      if (signal(i) ~= 0)
-          silent = 0;
-      end
-      if (silent == 1150)
-           numSyllables = numSyllables + 1;
-           silent = 0;
-      end
+          if (signal(i) == 0)
+              silent = silent + 1;
+          end
+          if (signal(i) ~= 0 && silent < 330) %330 is the minimum range of silent that we let pass
+              silent = 0;
+          end
+          if (signal(i) ~= 0 && silent >= 330)
+               numSyllables = numSyllables + 1;
+               silent = 0;
+          end
     end
 end
