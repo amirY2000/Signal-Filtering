@@ -2,6 +2,8 @@
 %then eventually writes the modified signal into a new wav file
 function [y, Fs] = processor(filename, newFile)
     [y, Fs] = audioread(filename);
+    info = audioinfo(filename);
+    info.SampleRate
     
     temp = y; %saving the original signal
      if size(y,2) == 2
