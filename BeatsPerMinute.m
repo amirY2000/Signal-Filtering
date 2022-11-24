@@ -2,7 +2,6 @@ clear;clc;close all;
 
 [yD,FsD] = processor('Drum.wav', 'Drum1.wav');
 [yDcopy,FsDcopy] = audioread("Drum.wav");
-sound(yDcopy)
 
 %plotting the absolute value of the signal
 subplot(2,1,1)
