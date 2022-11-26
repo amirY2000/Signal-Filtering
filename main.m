@@ -19,7 +19,7 @@ clear;clc;
 
 
 
-[y3,Fs3] = processor('Speech.wav', 'SpeechModified.wav');
+[ySpeech,FsSpeech] = processor('Speech.wav', 'SpeechModified.wav');
 [ySpeechModified,FsSpeechModified] = audioread("SpeechModified.wav");
 
 SyllableFinder(ySpeechModified)
